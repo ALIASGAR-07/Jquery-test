@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a workable responsive Header Using jquery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .img {
+            height: 100%;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .img img {
+            height: 10%;
+            width: 10%;
+        }
+
+        button {
+            height: fit-content;
+            width: fit-content;
+            padding: 10px;
+            background-color: aliceblue;
+            border: 1px solid aliceblue;
+            padding-top: 0px;
+            display: none;
+        }
+
+        header {
+            height: 15vh;
+            width: 100%;
+            background-color: aliceblue;
+            display: flex;
+            justify-content: center;
+        }
+
+        header .links {
+            width: 100%;
+            padding: 50px;
+            text-align: center;
+        }
+
+        header .links a {
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+            font-size: 25px;
+        }
+
+        /* =========================================  MEDIA 480px  ================================ */
+
+        @media (max-width:480px) {
+
+            .img {
+                height: 100%;
+                width: 100%;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .img img {
+                height: 100%;
+                width: 70%;
+            }
+
+            button {
+                height: fit-content;
+                width: fit-content;
+                padding: 10px;
+                background-color: rgb(255, 255, 255);
+                border: 1px solid rgb(255, 255, 255);
+                padding-top: 50px;
+                display: block;
+            }
+
+            header {
+                height: 50vh;
+                width: 50%;
+                background-color: aliceblue;
+                display: none;
+                flex-direction: row;
+                justify-content: center;
+                position: absolute;
+            }
+
+            header .links {
+                height: 50%;
+                width: 100%;
+                padding: 0px;
+                text-align: center;
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: column;
+            }
+
+            header .links a {
+                text-decoration: none;
+                color: black;
+                padding: 10px;
+                font-size: 25px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================================image and button=============================================== -->
+
+    <div class="imageandbutton" style="display: flex;">
+        <button><i class="fas fa-bars fa-2xl" id="show"></i></button>
+        <div class="img">
+            <img src="https://www.rnwmultimedia.edu.in/assets/img/photos/rnw-logo.png" alt="">
+        </div>
+    </div>
+
+    <!-- ==========================================================links========================================================= -->
+
+    <header>
+        <div class="links">
+            <a href="">Home</a>
+            <a href="">Career</a>
+            <a href="">Courses</a>
+            <a href="">About us</a>
+            <a href="">Contact us</a>
+        </div>
+    </header>
+
+    <!-- ==============================================JQUERY============================= -->
+
+    <script>
+        $(document).ready(function () {
+            $("#show").click(function () {
+                $("header").toggle(2000);
+                $("header").css({ "display": "flex" });
+            })
+        })
+    </script>
+
+    
+</body>
+
+</html>
